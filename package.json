@@ -73,9 +73,7 @@
     "tailwindcss": "^3.2.1"
   },
   "lint-staged": {
-    "./**/*.{ts,tsx}": [
-      "eslint --ext .tsx --ext .ts . --fix"
-    ]
+    "./**/*.{ts,tsx}": "eslint --cache --fix"
   },
   "husky": {
     "hooks": {

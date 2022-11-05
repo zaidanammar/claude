@@ -1,6 +1,6 @@
 import Get from '../internals/api/get'
 
-export const getCharacters = async ({ page }: { page: number }) => {
+export const getPeoples = async ({ page }: { page: number }) => {
   const response = await Get({
     endpoint: `${process.env.REACT_APP_PUBLIC_API}/people`,
     params: {
@@ -15,7 +15,7 @@ export const getCharacters = async ({ page }: { page: number }) => {
   }
 }
 
-export const getCharacter = async ({ id }: { id: number }) => {
+export const getPeople = async ({ id }: { id: number }) => {
   const response = await Get({
     endpoint: `${process.env.REACT_APP_PUBLIC_API}/people/${id}`,
   })

@@ -1,10 +1,10 @@
 import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
-import { getCharacter, getCharacters } from '../services/pokemon'
+import { getPeoples, getPeople } from '../services/people'
 
-const useFetchCharacters = () =>
+const useFetchPeoples = () =>
   useInfiniteQuery(
-    ['pokemon'],
-    ({ pageParam = 1 }) => getCharacters({ page: pageParam }),
+    ['peoples'],
+    ({ pageParam = 1 }) => getPeoples({ page: pageParam }),
     {
       getNextPageParam: (pages: any) => {
         if (pages?.nextPage <= pages?.totalPage) {
@@ -16,9 +16,9 @@ const useFetchCharacters = () =>
     }
   )
 
-const useFetchCharacter = ({ id }: { id: number }) =>
-  useQuery([`pokemon-${id}`], () => getCharacter({ id }), {
+const useFetchPeople = ({ id }: { id: number }) =>
+  useQuery([`people-${id}`], () => getPeople({ id }), {
     refetchOnWindowFocus: false,
   })
 
-export { useFetchCharacters, useFetchCharacter }
+export { useFetchPeoples, useFetchPeople }

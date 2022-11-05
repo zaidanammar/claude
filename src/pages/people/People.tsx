@@ -1,14 +1,13 @@
 import React from 'react'
 import InfiniteScroll from 'react-infinite-scroller'
-import { useNavigate } from 'react-router-dom'
 import Loading from '../../components/atoms/Loading'
+import Card from '../../components/molecules/card'
 
-import { useFetchCharacters } from '../../hooks/pokemon'
-import type { People } from '../../types/people'
+import { useFetchPeoples } from '../../hooks/people'
+import type { People as PeopleType } from '../../types/people'
 
-const Pokemon = () => {
-  const navigate = useNavigate()
-  const { data, isLoading, hasNextPage, fetchNextPage } = useFetchCharacters()
+const People = () => {
+  const { data, isLoading, hasNextPage, fetchNextPage } = useFetchPeoples()
 
   return (
     <main className="pt-4">
@@ -29,15 +28,8 @@ const Pokemon = () => {
         >
           {data &&
             data?.pages?.map((page) =>
-              page?.results?.map((people: People) => (
-                <div
-                  key={people.name}
-                  className="bg-white border rounded-md shadow my-5 p-5 font-semibold cursor-pointer"
-                  onClick={() => navigate(`/people/${people.url.slice(29)}`)}
-                  role="presentation"
-                >
-                  <p>{people.name}</p>
-                </div>
+              page?.results?.map((people: PeopleType) => (
+                <Card people={people} key={people.name} />
               ))
             )}
         </InfiniteScroll>
@@ -46,4 +38,4 @@ const Pokemon = () => {
   )
 }
 
-export default Pokemon
+export default People

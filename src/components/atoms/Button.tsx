@@ -3,17 +3,23 @@ import React, { ReactNode } from 'react'
 
 interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   children: ReactNode
-  handleClick?: () => void
   type?: 'button' | 'submit' | 'reset'
+  className?: string
 }
 
 const Button = ({
   children,
-  handleClick,
+  onClick,
   type = 'button',
   disabled,
+  className,
 }: ButtonProps) => (
-  <button type={type} onClick={handleClick} disabled={disabled}>
+  <button
+    type={type}
+    onClick={onClick}
+    disabled={disabled}
+    className={`rounded-md shadow ${className}`}
+  >
     {children}
   </button>
 )

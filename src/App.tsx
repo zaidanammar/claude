@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Navbar from './components/templates/Navbar'
 import Routes from './routes'
 

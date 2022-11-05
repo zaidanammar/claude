@@ -26,7 +26,7 @@ const TemplatesNavbar = () => {
             )}
             <h1
               role="presentation"
-              onClick={() => navigate('/movie')}
+              onClick={() => navigate('-1')}
               className="sm:text-4xl text-3xl font-bold text-primary cursor-pointer"
             >
               SWAPI

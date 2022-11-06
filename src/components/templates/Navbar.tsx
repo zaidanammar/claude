@@ -21,12 +21,12 @@ const TemplatesNavbar = () => {
           <div className="flex items-center gap-1">
             {!exceptPath.includes(pathname) && (
               <div className="flex -ml-4">
-                <IoIosArrowBack size={32} onClick={() => navigate(-1)} />
+                <IoIosArrowBack size={32} onClick={() => navigate('-1')} />
               </div>
             )}
             <h1
               role="presentation"
-              onClick={() => navigate(-1)}
+              onClick={() => navigate('/')}
               className="sm:text-4xl text-3xl font-bold text-primary cursor-pointer"
             >
               SWAPI

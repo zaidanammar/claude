@@ -3,14 +3,14 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { IoIosArrowBack } from 'react-icons/io'
 import { MdOutlineFavoriteBorder } from 'react-icons/md'
 
-// import { useFetchMovies } from '../../hooks/movie'
-// import { useAppSelector } from '../../store/hooks'
-// import { selectWishlist } from '../../store/wishlists/wishlistsSlice'
+import { useAppSelector } from '../../store/hooks'
+import { selectFavourite } from '../../store/favourite/favouriteSlice'
+import Badge from '../atoms/Badge'
 
 const TemplatesNavbar = () => {
   const navigate = useNavigate()
   const { pathname } = useLocation()
-  //   const wishlists = useAppSelector(selectWishlist)
+  const favourite = useAppSelector(selectFavourite)
 
   const exceptPath = ['/people', '/people/']
 
@@ -26,7 +26,7 @@ const TemplatesNavbar = () => {
             )}
             <h1
               role="presentation"
-              onClick={() => navigate('-1')}
+              onClick={() => navigate(-1)}
               className="sm:text-4xl text-3xl font-bold text-primary cursor-pointer"
             >
               SWAPI
@@ -37,13 +37,13 @@ const TemplatesNavbar = () => {
         <div className="flex-1 flex justify-end sm:gap-5 gap-3">
           <div className="flex items-center">
             <div className="flex w-full h-full">
-              {/* <ABadge badgeContent={wishlists.length} color="secondary">
-                </ABadge> */}
-              <MdOutlineFavoriteBorder
-                className="fill-primary"
-                size={32}
-                onClick={() => navigate('/favourite')}
-              />
+              <Badge count={favourite.length}>
+                <MdOutlineFavoriteBorder
+                  className="fill-primary"
+                  size={32}
+                  onClick={() => navigate('/favourite')}
+                />
+              </Badge>
             </div>
           </div>
         </div>

@@ -149,7 +149,7 @@ How to run a project, please follow the instructions below.
 1. Run the Project
 
 ```bash
-npm run dev or yarn dev
+npm run start or yarn start
 ```
 
 How to run a `storybook`, please follow the instructions below.
@@ -157,7 +157,7 @@ How to run a `storybook`, please follow the instructions below.
 1. Run the `storybook` in local
 
 ```bash
-npm run dev:storybook or yarn dev:storybook
+npm run storybook or yarn storybook
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

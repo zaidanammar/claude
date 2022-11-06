@@ -5,6 +5,7 @@
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@reduxjs/toolkit": "^1.9.0",
+    "@storybook/addon-postcss": "^2.0.0",
     "@tanstack/react-query": "^4.14.3",
     "@tanstack/react-query-devtools": "^4.14.3",
     "@testing-library/jest-dom": "^5.16.5",
@@ -37,8 +38,8 @@
     "lint:fix": "eslint --ext .tsx --ext .ts . --fix",
     "format": "prettier . --write",
     "prepare": "husky install",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": [
